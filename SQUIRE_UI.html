@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="SQUIRE_script.js"></script>
+    <link rel="stylesheet" type="text/css" href="gridforms-master/gridforms/gridforms.css" />
+    <link rel="stylesheet" type="text/css" href="Styles_1.css" />
+    <link rel="stylesheet" type="text/css" href="assets\bootstrap-3.3.5-dist\css\bootstrap.css"><title>Staff Qualification Information Repository</title>
+</head>
+<body>
+    <form class="grid-form">
+        <fieldset id="generalInfo" >
+            <legend>Add Staff</legend>
+            <div class="dataEntryId" id="staffType_generalInfo">
+                <div data-row-span="7">
+                    <div data-field-span="1">
+                        <label>Staff Type</label>
+                        <!--replace hardcoded with javascript to iterate over staff types-->
+                        <!--inputs should be dynamically generated based on the table fields where data is to be input-->
+                        <select class="SQUIRE_inputs" id="staffType">
+                            <option value="Related Service Provider">Related Service Provider</option>
+                            <option value="Teacher">Teacher</option>
+                            <option value="Administrator">Administrator</option>
+                            <option value="Direct Care Provider">Direct Care Provider</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <!--Dont forget NPI number It should be a hidden field UNLESS a user selects Related service provider-->
+                    <div data-field-span="1" id="firstName">
+                        <label>First Name</label>
+                        <input class="SQUIRE_inputs" type="text" />
+                    </div>
+
+                    <div data-field-span="1" id="lastName">
+                        <label>Last Name</label>
+                        <input class="SQUIRE_inputs" type="text" />
+                    </div>
+
+                    <div data-field-span="1" id="middleName">
+                        <label>Middle Name</label>
+                        <input class="SQUIRE_inputs" type="text" />
+                    </div>
+
+                    <div data-field-span="1" id="email">
+                        <label>Staff Email</label>
+                        <input class="SQUIRE_inputs"type="text" />
+                    </div>
+
+                    <div data-field-span="1">
+                        <button id="deleteStaff" type="button">Delete</button>
+                    </div>
+
+                </div>
+            </div>
+            </fieldset>
+                <div data-row-span="1">
+                    <div data-field-span="1">
+                        <!--<label>Add Staff</label>-->
+                        <button id="addStaff" type="button">+Add Staff</button>
+                    </div>
+                </div>
+
+                <div data-row-span="1">
+                    <div data-field-span="1">
+                        <button id="save" type="button">Save!</button>
+                    </div>
+                </div>
+        
+            <fieldset>
+             
+        </fieldset>
+
+    </form>
+
+    <div>
+        <button id="next" type="button">Next</button>
+    </div>
+
+    <div class="progress">
+        <div class="progress-bar progress-bar-success" style="width: 20%">
+            <span class="sr-only">Staff Type & General Info</span>
+        </div>
+
+        <div class="progress-bar progress-bar-warning progress-bar-striped" style="width: 20%">
+            <span class="sr-only">Staff School Assignment</span>
+        </div>
+
+        <div class="progress-bar progress-bar-danger" style="width: 20%">
+            <span class="sr-only">Staff Specialites</span>
+        </div>
+
+        <div class="progress-bar progress-bar-danger" style="width: 20%">
+            <span class="sr-only">Sanctions</span>
+        </div>
+
+        <div class="progress-bar progress-bar-danger" style="width: 20%">
+            <span class="sr-only">Review Records</span>
+        </div>
+
+    </div>
+
+    
+
+</body>
+</html>

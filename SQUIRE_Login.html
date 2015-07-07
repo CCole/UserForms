@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title>SQUIRE Login</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="SQUIRE_Auth_Script.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap-3.3.5-dist/css/bootstrap.css" />
+</head>
+
+<body>
+    <div class="col-md-12">
+        <div class="modal-dialog" style="margin-bottom:0">
+            <div class="modal-content">
+
+                <div class="panel-heading">
+                    <h3 class="panel-title">SQUIRE Sign In</h3>
+                </div>
+
+                <form role="form" style="padding:7px">
+                    <div class="form-group">
+                        <!--<label for="userName">Email</label>-->
+                        <input id="userName" class="form-control" type="email" name="UserName" placeholder="Enter Email" /> <br />
+                    </div>
+
+                    <div class="form-group">
+                        <!--<label for="pass">Password</label>-->
+                        <input id="pass" class="form-control" type="password" name="Password" placeholder="Password" /> <br />
+                    </div>
+
+                    <!--<div class="checkbox">
+                        <label>
+                            <input type="checkbox" /> Remember me
+                        </label>
+                    </div>-->
+
+                    <input id="submitLogin" class="btn btn-sm btn-success" type="submit" value="Login!" />
+
+                </form>
+
+                <!--<div>
+                    <p id="loginResponse"></p>
+                </div>-->
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
