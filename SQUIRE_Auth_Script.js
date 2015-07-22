@@ -1204,7 +1204,7 @@ function QuickBaseClient(qdbServer) {
 
 //---------------------------------------------^U^ Quickbase Client 
 
-var qdb = new QuickBaseClient();
+var qdb = new QuickBaseClient("https://octo.quickbase.com/db/main");
 //alert(qdb);
 
 
@@ -1215,13 +1215,19 @@ var qdb = new QuickBaseClient();
             var usr = $("#userName").val();
            // alert(usr);
             var pass = $("#pass").val();
-            
-            
+            //alert(usr);
+           
        //authenticate on /db/main (no dbid) 
             qdb.Authenticate(usr, pass);
 
-            var error_code = qdb.errorcode;
-            alert(error_code);
+           qdb.GetTicket();
+           alert(qdb.ticket);
+           window.location = "https://octo.quickbase.com/db/bjy687qbz?a=a=AppDBPages&pageID&pageID=20&windowed=1";
+
+           console.log(qdb.errorcode);
+
+            //var error_code = qdb.errorcode;
+            //alert(error_code);
             
             
 
@@ -1229,11 +1235,11 @@ var qdb = new QuickBaseClient();
            // alert(url);
             // alert(data);
 
-            var authTicket = qdb.GetTicket();
+          
            
-            if (authTicket != null) {
-                window.location = ("https://octo.quickbase.com/db/bjy687qbz?a=showpage&page=1&pageid=13");
-
+            if (qdb.ticket != null) {
+                
+               location.assign("https://octo.quickbase.com/db/bjy687qbz?a=a=AppDBPages&pageID&pageID=20&windowed=1");
 
             } else {
                 //go to page that displays error from error_code

@@ -1209,13 +1209,16 @@
     })()
 //--------------------------------------------------------------End QB API Code----------------------------------------
 
-    var qdb = new QuickBaseClient();
+    var qdb = new QuickBaseClient("https://octo.quickbase.com/db/main");
+
+    qdb.Authenticate()
 
     $(document).ready(function () {
         //alert("wtf");
         $(".Frame").ready(function () {
 
-            qdb.GetTicket();
+            var newticket = qdb.GetTicket();
+            alert(newticket);
 
             $("#addStaff").click(function () {
                 //alert("hey");
@@ -1240,22 +1243,46 @@
             
 
 
-
+            //attempt to save the values entered into the inputs of class '.SQUIRE_inputs' 
 
             $("#save").click(function () {
                 alert("WTF");
-                var staffType = [$("#staffType"), $("#firstName"), $("#lastName"), $("middleName"), $("email")];
+                //dont need the following line of code: 
+                //var staffType = [$("#staffType"), $("#firstName"), $("#lastName"), $("middleName"), $("email")]; 
 
                 var staffType = new Array();
-                staffType = $(":input").toArray();
-                var arrayLength = staffType.length; 
+
+                $('.SQUIRE_inputs').each(function () {
+                    staffType.push($(this).val()); 
+                })
                 
-                alert(arrayLength);
+                qdb.GetTicket();
+                alert(qdb.ticket);
+
+               // staffType = $(".SQUIRE_inputs").toArray();
+
+               // staffType = staffType.map(stringifyArray, staffType);
+
+               /* function stringifyArray(value, position, array) {
+                    return value.ToString();
+                };*/
+
+                var arrayLength = staffType.length;
+
+
+                
                
-                for (var i; i < arrayLength; i++){
-                    alert(i); 
+               
+                for (var i=0; i < arrayLength; i++){
+                    alert(staffType[i]); 
                 }
 
+                alert(arrayLength);
+                //alert(staffType[0]);
+                //alert(staffType[1]);
+                //numbers in array represent the field id's within the Staff Table where the Staff Table ID 'bjy687qes'
+
+                // AddRecord() is defined on line 140
                 qdb.AddRecord("bjy687qes", ["35", staffType[0], "8", staffType[1], "9", staffType[2], "10", staffType[3], "11", staffType[4]]);
             })
             
